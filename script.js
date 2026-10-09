@@ -91,13 +91,16 @@
     queueNavUpdate();
   }
 
-  // Cursor-following neon glow on the landing/home page only. Disabled on touch devices.
+  // Cursor-following neon glow on the landing/home page.
+  // Listen for pointer events directly: the coarse-pointer media query can also
+  // match touch-capable laptops, which previously disabled the effect entirely.
   const cursorGlow = $('.cursor-glow');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
-  if (cursorGlow && !coarsePointer) {
+  if (cursorGlow) {
     let pointerFrame = 0;
     document.addEventListener('pointermove', event => {
+      // Do not make the glow jump around from touch gestures on phones/tablets.
+      if (event.pointerType === 'touch') return;
       if (pointerFrame) window.cancelAnimationFrame(pointerFrame);
       pointerFrame = window.requestAnimationFrame(() => {
         document.documentElement.style.setProperty('--cursor-x', `${event.clientX}px`);
@@ -107,6 +110,9 @@
       });
     }, { passive: true });
     document.documentElement.addEventListener('pointerleave', () => {
+      document.body.classList.remove('cursor-glow-active');
+    });
+    window.addEventListener('blur', () => {
       document.body.classList.remove('cursor-glow-active');
     });
     if (reducedMotion) cursorGlow.style.transition = 'opacity .2s ease-out';
