@@ -1,0 +1,33 @@
+NOVALIVE — RESOURCE LISTING TEMPLATE
+====================================
+
+Use this template to prepare a resource before adding it to the portal.
+
+Resource title:
+
+Category: Gaming / Editing / Creator / Tool
+
+Short description (1–2 sentences):
+
+What is included?
+- 
+- 
+- 
+
+File type / format:
+File size:
+Version or last updated:
+Download URL:
+Official source / creator credit:
+License / permission checked? Yes / No
+Safety scan / source checked? Yes / No / Not applicable
+Thumbnail filename:
+
+Before publishing:
+[ ] I have permission to redistribute this file.
+[ ] The download URL works and points to the intended file.
+[ ] The filename and description are accurate.
+[ ] The file does not contain private information or secrets.
+[ ] I have checked the file/source for suspicious content.
+
+NOVALIVE | Gaming • Editing • Tools

@@ -1,0 +1,40 @@
+NOVALIVE — VIDEO EDITING WORKFLOW
+=================================
+
+1. PLAN
+[ ] Choose the goal, audience and target platform.
+[ ] Write a short outline or shot list.
+[ ] Confirm the target aspect ratio and resolution before editing.
+
+2. ORGANIZE
+[ ] Create folders: Project, Footage, Audio, Graphics, Exports and Archive.
+[ ] Rename important files clearly.
+[ ] Copy original footage to a safe location before moving or deleting anything.
+[ ] Create the project using settings suited to the source footage and target platform.
+
+3. EDIT
+[ ] Review footage and mark the strongest takes.
+[ ] Build a rough cut before adding effects.
+[ ] Tighten pacing, then add titles, transitions and graphics only where useful.
+[ ] Balance dialogue, music and sound effects; avoid clipping.
+[ ] Correct exposure and white balance before applying a creative look.
+[ ] Check text safe areas and readability on a phone-sized screen.
+
+4. REVIEW
+[ ] Watch the whole edit from start to finish.
+[ ] Check spelling, timing, sync, black frames and accidental gaps.
+[ ] Confirm music, fonts and other assets are licensed for the intended use.
+[ ] Ask for feedback if possible and make a final pass.
+
+5. EXPORT AND BACK UP
+[ ] Select the format, resolution and frame rate required by the platform.
+[ ] Use a sensible bitrate/preset for the project and file-size target.
+[ ] Watch the exported file, not only the timeline preview.
+[ ] Keep the final export and a backup of the project/assets you need.
+
+Project: ___________________________
+Editor: ____________________________
+Target platform: ____________________
+Export settings: ____________________
+
+NOVALIVE | Gaming • Editing • Tools

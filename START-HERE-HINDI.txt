@@ -1,0 +1,60 @@
+NOVALIVE WEBSITE — SABSE PEHLE YE PADHO
+======================================
+
+Aapki website ki files ready hain. Ye static website hai; search, category filters, text transformer, colour palette generator aur hashtag helper browser mein kaam karte hain. Sample checklist downloads bhi included hain.
+
+GITHUB PAR UPLOAD KARNE KA TARIKA
+---------------------------------
+1. Is ZIP ko computer par Extract All karo.
+2. Browser mein ye repository kholo:
+   https://github.com/novalive-devil/novalive-devil.github.io
+3. Code tab par jao aur "Add file" > "Upload files" choose karo.
+4. Extract ki hui folder ke ANDAR ki saari files select karke upload karo:
+   index.html
+   style.css
+   script.js
+   favicon.svg
+   FPS-Optimization-Checklist.txt
+   Video-Editing-Workflow.txt
+   Creator-Content-Planner.txt
+   Resource-Listing-Template.txt
+   START-HERE-HINDI.txt
+   (README.md bhi optional hai.)
+   ZIP file khud upload karne se website publish nahi hogi; pehle extract karna zaroori hai.
+5. Neeche "Commit changes" par click karo.
+6. Repository mein Settings > Pages kholo.
+7. Build and deployment mein "Deploy from a branch" select karo.
+8. Branch: main; folder: /(root) select karke Save karo.
+9. Kuch minute wait karke ye address kholo:
+   https://novalive-devil.github.io
+
+AGAR WEBSITE NA KHULE
+---------------------
+- Check karo ki index.html repository ke root mein hai, kisi extra folder ke andar nahi.
+- Settings > Pages par deployment status dekho.
+- 5–10 minute wait karke refresh karo.
+
+APNE LINKS UPDATE KARNA
+-----------------------
+Instagram aur YouTube links index.html mein hain. Abhi known handles ke links set hain; unhe test kar lena.
+Discord/Telegram abhi placeholders hain.
+Contact email bhi placeholder hai: novalive@example.com. Apna email ho tabhi change karna.
+
+LINK EDIT KARNE KA TARIKA
+-------------------------
+GitHub par index.html kholo > pencil (Edit) icon > required text/link badlo > Commit changes.
+
+RESOURCES ADD KARNA
+-------------------
+1. Apni file repository root par upload karo.
+2. index.html mein existing resource-card copy karo.
+3. Card ka title/description/category badlo aur download link mein apni filename lagao.
+4. CSS aur JS files ko filhaal change karne ki zaroorat nahi.
+
+IMPORTANT
+---------
+- Ye version static hai. Ismein login/admin upload panel ya database nahi hai.
+- Direct-upload admin panel banane ke liye baad mein trusted backend/database/storage chahiye.
+- GitHub Pages par private data, passwords, API keys ya personal documents upload mat karna; public repository ke files sab dekh sakte hain.
+- Sirf wohi files upload/redistribute karna jinhe share karne ki permission hai. Unknown EXE files se bacho.
+- Custom domain novalive.eu.org ko tab configure karna jab EU.org approval mil jaaye. Abhi domain approval confirmed nahi hai.

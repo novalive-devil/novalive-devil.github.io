@@ -1,0 +1,35 @@
+NOVALIVE — PC GAMING PERFORMANCE CHECKLIST
+===========================================
+
+Use this as a checklist, not a promise of extra FPS. Results depend on your hardware and game.
+
+BEFORE CHANGING SETTINGS
+[ ] Write down your current graphics and display settings.
+[ ] Update Windows through its normal update settings.
+[ ] Install GPU drivers from the official NVIDIA, AMD or Intel website/app.
+[ ] Keep enough free storage for Windows and the game to update properly.
+[ ] Close apps and browser tabs you do not need while gaming.
+
+IN-GAME SETTINGS
+[ ] Choose the correct monitor and refresh rate.
+[ ] Test fullscreen or borderless mode and keep whichever performs best for your setup.
+[ ] Lower demanding settings one at a time (shadows, reflections, volumetrics).
+[ ] Use an upscaling option only if your GPU/game supports it and the image looks acceptable.
+[ ] Set an FPS cap if it improves frame pacing or temperature for your setup.
+[ ] Check whether V-Sync, VRR/G-SYNC/FreeSync settings suit your monitor.
+
+STABILITY AND SAFETY
+[ ] Check temperatures and clock behaviour with a trusted monitoring tool.
+[ ] Keep laptop vents clear; do not block cooling intakes.
+[ ] Avoid unknown "FPS booster" executables, registry packs and driver download sites.
+[ ] Do not disable security tools or essential Windows services based on random guides.
+[ ] Change one setting at a time, test a repeatable scene, and revert if worse.
+
+NOTES
+Game: ______________________________
+Resolution: ________________________
+Average FPS before: ________________
+Average FPS after: _________________
+Changes tested: ____________________
+
+NOVALIVE | Gaming • Editing • Tools
