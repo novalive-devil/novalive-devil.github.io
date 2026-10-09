@@ -1,19 +1,16 @@
-# NOVALIVE — Reference-inspired interface (V1.3)
+# NOVALIVE V1.5
 
-A free static website for GitHub Pages, designed around a dark, neon cyan/purple gaming-and-creator portal interface.
+A dark neon gaming, editing and creator resource portal.
 
 ## Pages
-- `index.html`: landing page with top navigation, hero, portal call-to-action, social buttons, about/features/community sections and FAQ.
-- `portal.html`: main resource portal with category cards, resource search/filter, downloadable text resources, browser utilities and a social hub.
-- `landing.css`: landing-page styling.
-- `style.css`: portal styling.
-- `script.js`: mobile navigation, resource filtering/search, text case tool, colour palette generator, hashtag helper and honest placeholder notices for social links not yet supplied.
+- `index.html` — Home / landing page with direct social links and cursor-following neon glow.
+- `portal.html` — Main portal with resource directory, browser tools and social hub.
 
-## GitHub Pages
-The repository is intended to publish from branch `main`, folder `/(root)`. Upload the contents of this package to the repository root, replacing same-named files when prompted. Do not upload the ZIP itself.
+## Update notes
+- Active navigation underline follows the visible section while scrolling.
+- Portal header button is labelled **Home**.
+- Home page includes a pointer-following cyan/blue/purple glow on mouse devices; touch devices do not show this effect.
+- Social URLs are configured in the page markup.
 
-## Social links
-Instagram and YouTube point to the handles supplied by the site owner. Telegram and WhatsApp buttons show a helpful notice until the owner provides the real public channel/invite URLs. Update the corresponding placeholder button in `index.html` and `portal.html` to an `<a href="REAL_URL">` when those links are available.
-
-## Notes
-This is a static site. Resource files are public if placed in this public repository. No passwords, secrets or private data should be committed. A browser-based admin upload dashboard would require a separate backend or storage service.
+## Deploy
+Upload all files in this directory to the root of the `novalive-devil.github.io` GitHub repository and commit changes. Keep `index.html` at the repository root.

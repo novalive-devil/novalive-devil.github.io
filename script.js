@@ -34,19 +34,82 @@
     }
   }
 
-  // Mobile navigation
+  // Mobile navigation + scroll-aware active navigation indicator.
   const menuToggle = $('#menuToggle');
   const mainNav = $('#mainNav');
+  const navLinks = mainNav ? $$('.nav-link', mainNav) : [];
   if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', () => {
       const open = mainNav.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', String(open));
       menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
     });
-    $$('.nav-link', mainNav).forEach(link => link.addEventListener('click', () => {
+    navLinks.forEach(link => link.addEventListener('click', () => {
       mainNav.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
     }));
+  }
+
+  // Keep the cyan/purple underline directly under whichever portal section is active.
+  // This works for both the landing page's section nav and the portal's section nav.
+  const navSectionPairs = navLinks.map(link => {
+    const href = link.getAttribute('href') || '';
+    if (!href.startsWith('#')) return null;
+    const target = document.getElementById(href.slice(1));
+    return target ? { link, target } : null;
+  }).filter(Boolean);
+
+  function updateActiveNavigation() {
+    if (!navSectionPairs.length) return;
+    const markerY = Math.min(window.innerHeight * 0.32, 220);
+    let activePair = navSectionPairs[0];
+    for (const pair of navSectionPairs) {
+      if (pair.target.getBoundingClientRect().top <= markerY) activePair = pair;
+      else break;
+    }
+    navSectionPairs.forEach(({ link, target }) => {
+      const active = target === activePair.target;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  if (navSectionPairs.length) {
+    let navUpdateQueued = false;
+    const queueNavUpdate = () => {
+      if (navUpdateQueued) return;
+      navUpdateQueued = true;
+      window.requestAnimationFrame(() => {
+        updateActiveNavigation();
+        navUpdateQueued = false;
+      });
+    };
+    window.addEventListener('scroll', queueNavUpdate, { passive: true });
+    window.addEventListener('resize', queueNavUpdate, { passive: true });
+    window.addEventListener('hashchange', queueNavUpdate);
+    window.addEventListener('load', queueNavUpdate, { once: true });
+    queueNavUpdate();
+  }
+
+  // Cursor-following neon glow on the landing/home page only. Disabled on touch devices.
+  const cursorGlow = $('.cursor-glow');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+  if (cursorGlow && !coarsePointer) {
+    let pointerFrame = 0;
+    document.addEventListener('pointermove', event => {
+      if (pointerFrame) window.cancelAnimationFrame(pointerFrame);
+      pointerFrame = window.requestAnimationFrame(() => {
+        document.documentElement.style.setProperty('--cursor-x', `${event.clientX}px`);
+        document.documentElement.style.setProperty('--cursor-y', `${event.clientY}px`);
+        document.body.classList.add('cursor-glow-active');
+        pointerFrame = 0;
+      });
+    }, { passive: true });
+    document.documentElement.addEventListener('pointerleave', () => {
+      document.body.classList.remove('cursor-glow-active');
+    });
+    if (reducedMotion) cursorGlow.style.transition = 'opacity .2s ease-out';
   }
 
   // Resource search + category filter
