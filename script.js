@@ -50,8 +50,9 @@
     }));
   }
 
-  // Keep the cyan/purple underline directly under whichever portal section is active.
-  // This works for both the landing page's section nav and the portal's section nav.
+  // Scroll-aware navigation state. Pick the last section whose top has passed
+  // the sticky header, rather than relying on a fixed viewport percentage.
+  // This keeps Resources / Quick tools / Social hub active while scrolling.
   const navSectionPairs = navLinks.map(link => {
     const href = link.getAttribute('href') || '';
     if (!href.startsWith('#')) return null;
@@ -61,11 +62,17 @@
 
   function updateActiveNavigation() {
     if (!navSectionPairs.length) return;
-    const markerY = Math.min(window.innerHeight * 0.32, 220);
+    const header = $('.site-header') || $('.landing-header');
+    const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+    const markerY = headerBottom + Math.min(105, window.innerHeight * 0.14);
     let activePair = navSectionPairs[0];
+    let closestPassedTop = -Infinity;
     for (const pair of navSectionPairs) {
-      if (pair.target.getBoundingClientRect().top <= markerY) activePair = pair;
-      else break;
+      const top = pair.target.getBoundingClientRect().top;
+      if (top <= markerY && top > closestPassedTop) {
+        activePair = pair;
+        closestPassedTop = top;
+      }
     }
     navSectionPairs.forEach(({ link, target }) => {
       const active = target === activePair.target;
@@ -88,9 +95,15 @@
     window.addEventListener('resize', queueNavUpdate, { passive: true });
     window.addEventListener('hashchange', queueNavUpdate);
     window.addEventListener('load', queueNavUpdate, { once: true });
+    navLinks.forEach(link => link.addEventListener('click', () => {
+      const targetId = (link.getAttribute('href') || '').replace(/^#/, '');
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      navSectionPairs.forEach(pair => pair.link.classList.toggle('active', pair.target === target));
+      queueNavUpdate();
+    }));
     queueNavUpdate();
   }
-
   // Cursor-following neon glow on the landing/home page.
   // Listen for pointer events directly: the coarse-pointer media query can also
   // match touch-capable laptops, which previously disabled the effect entirely.
@@ -101,6 +114,7 @@
     document.addEventListener('pointermove', event => {
       // Do not make the glow jump around from touch gestures on phones/tablets.
       if (event.pointerType === 'touch') return;
+      if (event.pointerType && !['mouse', 'pen'].includes(event.pointerType)) return;
       if (pointerFrame) window.cancelAnimationFrame(pointerFrame);
       pointerFrame = window.requestAnimationFrame(() => {
         document.documentElement.style.setProperty('--cursor-x', `${event.clientX}px`);

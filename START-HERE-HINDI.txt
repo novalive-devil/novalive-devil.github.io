@@ -1,17 +1,23 @@
-NOVALIVE V1.5.1 — CURSOR GLOW FIX
+NOVALIVE V1.7 — DISCORD SOCIAL LINKS
 
-Is update mein sirf cursor-following glow ka fix hai. Navigation, social links aur portal ka baaki code same hai.
+Is version mein Discord server link landing page, social/community section aur main portal ke Social Hub mein add kiya gaya hai. Portal ke top par Support Discord aur Telegram buttons bhi hain. Landing CTA row mein Discord button included hai.
 
-UPDATE KARNE KA AASAAN TAREEQA
-1. ZIP extract karo.
-2. GitHub repository kholo: https://github.com/novalive-devil/novalive-devil.github.io
-3. Add file > Upload files par click karo.
-4. Is ZIP se sirf landing.css aur script.js upload karo. Dono existing files ko replace hone do.
-5. Commit changes karo.
-6. Deployment ke liye 1-3 minute wait karo. Website par jaakar Ctrl+F5 dabao.
+GITHUB PAR UPDATE KARNE KA TAREEQA
+1. Is ZIP ko download karke Extract All karo.
+2. Repository kholo: https://github.com/novalive-devil/novalive-devil.github.io
+3. Add file > Upload files par jao.
+4. Extracted folder ke andar ki SAARI files repository root mein upload karo; ZIP ko seedha upload mat karna.
+5. Same naam wali files replace hone do, phir Commit changes karo.
+6. 1-3 minute baad website refresh karke Ctrl+F5 dabao.
+
+SOCIAL LINKS
+Instagram: https://www.instagram.com/nl_devil_1m/
+YouTube: https://www.youtube.com/@NLDEVIL1M
+Telegram: https://t.me/NLDEVILYT
+WhatsApp: https://whatsapp.com/channel/0029VbDeqkmLo4hifYfKWw1j
+Discord: https://discord.gg/dGhGznEvpx
 
 IMPORTANT
-- ZIP file khud GitHub par upload mat karna.
-- index.html, portal.html ya repository delete karne ki zaroorat nahi hai.
-- Glow landing/home page par mouse cursor ko follow karta hai. Touch gestures par use nahi kiya jayega.
-- Agar glow phir bhi na dikhe, browser mein Windows Settings > Accessibility > Visual effects ke animation preference ya browser extensions check kar sakte ho; pehle hard refresh zaroor try karo.
+- Repository delete mat karna.
+- index.html ko root par hi rehna chahiye.
+- Agar website turant update na dikhe, thoda wait karke Ctrl+F5 dabao.
