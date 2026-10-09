@@ -73,6 +73,12 @@
     filterButtons.forEach(item => item.classList.toggle('selected', item === button));
     filterResources();
   }));
+  // Quick links from the NOVALIVE system directory select a category and jump to files.
+  $$('[data-filter-link]').forEach(link => link.addEventListener('click', () => {
+    activeFilter = link.dataset.filterLink || 'all';
+    filterButtons.forEach(item => item.classList.toggle('selected', (item.dataset.filter || 'all') === activeFilter));
+    filterResources();
+  }));
   resourceSearch?.addEventListener('input', filterResources);
   document.addEventListener('keydown', event => {
     if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) {
