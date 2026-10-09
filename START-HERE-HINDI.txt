@@ -1,30 +1,27 @@
-NOVALIVE V1.1 — NEON PORTAL
-===========================
+NOVALIVE V1.3 — HINDI SETUP
 
-Is version mein design ko dark black + cyan + blue/purple neon style mein update kiya gaya hai, reference screenshots se inspired.
+Is version mein landing page aur main portal ko screen recording ke dark neon cyan/purple style ke kareeb banaya gaya hai.
 
-WEBSITE FILES
-- index.html: website structure
-- style.css: responsive design/theme
-- script.js: filters, search aur browser tools
-- *.txt: sample downloadable resources
-- favicon.svg: browser tab icon
-- robots.txt: crawler instruction
+GITHUB PAR UPDATE KARNE KE STEPS:
+1. ZIP download karke right-click > Extract All karo.
+2. https://github.com/novalive-devil/novalive-devil.github.io kholo.
+3. Add file > Upload files par click karo.
+4. Extracted folder ke andar ki saari files select karo. ZIP file ko seedha upload nahi karna.
+5. Files repository ke root par upload honi chahiye; kisi extra folder ke andar nahi.
+6. Same naam wali files ko replace hone do. index.html, portal.html, script.js, style.css, landing.css aur favicon.svg zaroor update hon.
+7. Neeche Commit changes par click karo.
+8. 1–3 minute baad https://novalive-devil.github.io/ ko Ctrl+F5 se refresh karo.
 
-GITHUB PAGES PAR UPDATE KARNE KA TARIKA
-1. ZIP ko extract karo.
-2. Extracted folder ke andar ki files select karo — index.html, style.css, script.js aur saari .txt files.
-3. GitHub repository kholo: https://github.com/novalive-devil/novalive-devil.github.io
-4. Add file > Upload files par click karo.
-5. ZIP ke andar wali files ko repository ke main/root level par drag-and-drop karo. Index.html kisi extra folder ke andar na rahe.
-6. Neeche Commit changes par click karo.
-7. Settings > Pages mein main branch aur /(root) selected rehne do. Kuch minute baad https://novalive-devil.github.io/ refresh karo; zaroorat pade to Ctrl+F5 dabao.
+FLOW:
+- Landing page par social links aur JOIN NOW / JOIN PORTAL button rahega.
+- JOIN NOW par click karne se portal.html open hoga.
+- Portal page par categories, resource downloads, search/filter aur browser tools honge.
 
-CUSTOM LINKS
-Instagram aur YouTube links current HTML mein configured hain. Discord/Telegram link tabhi kaam karega jab apna actual invite/channel URL add karoge. Contact email abhi placeholder hai.
+SOCIAL LINKS:
+Instagram aur YouTube configured hain. Telegram aur WhatsApp buttons abhi placeholder hain, kyunki actual public channel URLs nahi mile. Un links ko jodne ke liye sahi Telegram invite/channel URL aur WhatsApp Channel URL dena.
 
-IMPORTANT
-- GitHub Pages static hosting hai. Is website mein abhi login/admin dashboard, cloud file uploads ya database nahi hai.
-- Sample downloads basic text/checklist files hain. Apne original tools, presets ya assets ke links baad mein add kar sakte ho.
-- Public GitHub repository mein uploaded files sab dekh sakte hain. Passwords, API keys ya private details upload mat karna.
-- Apni hi ya share karne ki permission wali files upload karo; pirated/cracked software nahi.
+IMPORTANT:
+- Repository delete mat karna.
+- ZIP file ko direct upload mat karna.
+- Public repository ke files sab dekh sakte hain. Password/private info upload mat karna.
+- Ye static website hai; login karke browser se files upload karne wala admin dashboard abhi included nahi hai.

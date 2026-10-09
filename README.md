@@ -1,15 +1,19 @@
-# NOVALIVE — Gaming, Editing & Creator Portal
+# NOVALIVE — Reference-inspired interface (V1.3)
 
-A free static website made with HTML, CSS and vanilla JavaScript. V1.1 features a black/neon cyan/purple interface inspired by the user's visual reference, a responsive hero, six-category directory, resource cards with search/filter, browser utilities, social links, and sample downloadable checklist/planner files.
+A free static website for GitHub Pages, designed around a dark, neon cyan/purple gaming-and-creator portal interface.
 
-## Deploy with GitHub Pages
-1. Upload the *contents* of this folder to the root of `novalive-devil.github.io`.
-2. Go to **Settings → Pages**.
-3. Select **Deploy from a branch**, branch `main`, folder `/(root)`.
-4. Wait for deployment at `https://novalive-devil.github.io/`.
+## Pages
+- `index.html`: landing page with top navigation, hero, portal call-to-action, social buttons, about/features/community sections and FAQ.
+- `portal.html`: main resource portal with category cards, resource search/filter, downloadable text resources, browser utilities and a social hub.
+- `landing.css`: landing-page styling.
+- `style.css`: portal styling.
+- `script.js`: mobile navigation, resource filtering/search, text case tool, colour palette generator, hashtag helper and honest placeholder notices for social links not yet supplied.
+
+## GitHub Pages
+The repository is intended to publish from branch `main`, folder `/(root)`. Upload the contents of this package to the repository root, replacing same-named files when prompted. Do not upload the ZIP itself.
+
+## Social links
+Instagram and YouTube point to the handles supplied by the site owner. Telegram and WhatsApp buttons show a helpful notice until the owner provides the real public channel/invite URLs. Update the corresponding placeholder button in `index.html` and `portal.html` to an `<a href="REAL_URL">` when those links are available.
 
 ## Notes
-- This is static hosting. It does not yet include user accounts, a backend, database, admin upload panel, or cloud storage.
-- Instagram and YouTube links are configured. Add real Discord/Telegram URLs before publishing those.
-- The contact email in `index.html` is a placeholder.
-- Do not commit passwords, access tokens or other secrets to a public repository.
+This is a static site. Resource files are public if placed in this public repository. No passwords, secrets or private data should be committed. A browser-based admin upload dashboard would require a separate backend or storage service.

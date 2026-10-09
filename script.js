@@ -54,7 +54,7 @@
   const cards = $$('.resource-card');
   const filterButtons = $$('.filter-btn');
   const emptyState = $('#emptyState');
-  let activeFilter = 'all';
+  let activeFilter = new URLSearchParams(window.location.search).get('category') || 'all';
 
   function filterResources() {
     const query = (resourceSearch?.value || '').trim().toLowerCase();
@@ -79,6 +79,8 @@
     filterButtons.forEach(item => item.classList.toggle('selected', (item.dataset.filter || 'all') === activeFilter));
     filterResources();
   }));
+  filterButtons.forEach(button => button.classList.toggle('selected', (button.dataset.filter || 'all') === activeFilter));
+  filterResources();
   resourceSearch?.addEventListener('input', filterResources);
   document.addEventListener('keydown', event => {
     if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) {
@@ -160,6 +162,13 @@
   // Future social profiles without a supplied URL show a helpful message instead of a dead link.
   $$('.social-placeholder').forEach(button => button.addEventListener('click', () => {
     showToast(`${button.dataset.platform}: apna invite/channel link script.js mein add karna hai.`);
+  }));
+
+  // Placeholder social channels remain honest until the owner supplies the real URLs.
+  $$('[data-placeholder-link]').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    const platform = link.dataset.placeholderLink || 'Social channel';
+    showToast(`${platform}: apna actual channel/invite URL bhejo, phir is button ko direct connect kar denge.`);
   }));
 
   // Friendly placeholder mail link warning
